@@ -35,32 +35,43 @@ import paho.mqtt.client as mqtt
 ```
 
 ## Broker details
+```
 broker_address = "broker.hivemq.com"  # Broker address
 broker_port = 1883  # Broker port
 topic = "test/topic"  # Topic to publish to
+```
 
 ## Initialize the MQTT Client
+```
 client = mqtt.Client()
+```
 
 ## Connect to the broker
+```
 client.connect(broker_address, broker_port, keepalive=60)
+```
 
 ## Publish a message to the topic
+```
 message = "Hello, MQTT!"  # Message to be published
 client.publish(topic, message)
+```
 
 ## Disconnect from the broker
+```
 client.disconnect()
+```
 
 # Print confirmation message
+```
 print(f"Message '{message}' published to topic '{topic}'")
+```
 Run the Script:
-
 Execute the script. It will connect to the MQTT broker, publish the message to the specified topic, and then disconnect.
 Verify Message Publishing:
-
 You can verify the message by subscribing to the same topic using an MQTT client, such as MQTT.fx or any other MQTT subscriber tool.
- ## Outputs:
+ 
+## Outputs:
 Message Confirmation: The script will print a message confirming that the data has been successfully published to the topic.
 Example output:
 Message 'Hello, MQTT!' published to topic 'test/topic'
